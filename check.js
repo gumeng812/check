@@ -195,7 +195,7 @@ Check.timeDiffer=function(optStartDate,optEndDate){
 		return $(optEndDate).val().replace(/-/g,'')-Check.initDate(0).replace(/-/g,'');
 	return $(optEndDate).val().replace(/-/g,'')-$(optStartDate).val().replace(/-/g,'')
 }
-/**校验输入时间是否符合要求*/
+/* 校验输入时间是否符合要求 */
 Check.isTime=function(optStartDate,optEndDate,differ){
 		var startDate = $(optStartDate).val();
 		var endDate= $(optEndDate).val();
