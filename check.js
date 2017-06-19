@@ -1,6 +1,4 @@
-/**
- * 数据验证
- */
+/* 数据验证 */
 function Check(){};
 /**验证非空*/
 Check.checkNull = function(str){
@@ -197,28 +195,28 @@ Check.timeDiffer=function(optStartDate,optEndDate){
 }
 /* 校验输入时间是否符合要求 */
 Check.isTime=function(optStartDate,optEndDate,differ){
-		var startDate = $(optStartDate).val();
-		var endDate= $(optEndDate).val();
-		var stime = Check.isFormatTime(startDate);  
-		var etime = Check.isFormatTime(endDate);  
-	 	if(stime==null || etime==null){
-	 		if(stime!=null)
-	 			$(optEndDate).val(startDate);
-	 		if(etime!=null)
-	 			$(optStartDate).val(endDate);
-	 		if(stime==null && etime==null){
-	 			 $(optStartDate).val(Check.initDate(0));
-	 		 	 $(optEndDate).val(Check.initDate(0));
-	 		}
-	 	}else{
-	 		if(Check.timeDiffer(optStartDate,optEndDate)<0)
-	 			$(optStartDate).val(endDate);
-	 		if(Check.timeDiffer(null,optEndDate)>0)
-	 			$(optEndDate).val(Check.initDate(0));
-	 		if(Check.getTimeDiffer(optStartDate,optEndDate)>differ*24*60*60*1000)
-	 			return false;
-	 	}
-	 	return true;
+	var startDate = $(optStartDate).val();
+	var endDate= $(optEndDate).val();
+	var stime = Check.isFormatTime(startDate);  
+	var etime = Check.isFormatTime(endDate);  
+	if(stime==null || etime==null){
+		if(stime!=null)
+			$(optEndDate).val(startDate);
+		if(etime!=null)
+			$(optStartDate).val(endDate);
+		if(stime==null && etime==null){
+			 $(optStartDate).val(Check.initDate(0));
+			 $(optEndDate).val(Check.initDate(0));
+		}
+	}else{
+		if(Check.timeDiffer(optStartDate,optEndDate)<0)
+			$(optStartDate).val(endDate);
+		if(Check.timeDiffer(null,optEndDate)>0)
+			$(optEndDate).val(Check.initDate(0));
+		if(Check.getTimeDiffer(optStartDate,optEndDate)>differ*24*60*60*1000)
+			return false;
+	}
+	return true;
 }
 /**显示加密字符串*/
 Check.my_encrpt = function(str,start,end){
