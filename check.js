@@ -231,7 +231,7 @@ Check.my_encrpt = function(str,start,end){
 	if(end != -1){
 		sux = str.substring(end);
 	}else{
-		end = str.length;
+		end = str.length; 
 	}
 	var zx = "";
 	for(var i=0;i<end-start;i++){
