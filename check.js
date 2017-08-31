@@ -43,6 +43,13 @@ Check.isPhone = function(str){
 	}
 	return Check.notExist("1"+str.charAt(1)+str.charAt(2)+"********");
 };
+/* 简单电话验证 */
+Chec.simpleIsPhone = function(str){
+	if(!str) return Check.nullMsg();
+	if(str.length != 11) return Check.mustLength(11);
+	if(isNaN(str)) return Check.commonErr();
+	if (str.charAt(0) != '1') return Check.notExist(str.charAt(0)+"**********");
+};
 /**
  * 是否是合法字符
  * 一般为密码验证，允许部分特殊字符
